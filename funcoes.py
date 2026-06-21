@@ -21,7 +21,7 @@ def menu_principal ():
     print('3. Emitir Relatório')
     print(f'4. Encerrar programa, \n')
     opcao_limite = 4
-    escolha(opcao)
+    escolha(opcao_limite)
     
 def busca ():
     return
@@ -31,14 +31,14 @@ def menu_cadastro():
     print('2. Hardware.')
     print(f'3. Retornar ao menu anterior. \n')
     opcao_limite = 4
-    escolha(opcao)
+    escolha(opcao_limite)
     
 def menu_cadastro_desktop():
     print('1. Cadastrar desktop.')
     print('2. Cadastrar notebook.')
     print(f'Retornar ao menu anterior. \n')
     opcao_limite = 1
-    escolha (opcao)
+    escolha (opcao_limite)
     if opcao == 1:
         tipo = 'Desktop'
     elif opcao == 2:
@@ -51,8 +51,8 @@ def menu_armazenamento ():
     print('2. SSD')
     print(f'3. Retornar ao menu anterior. \n')
     opcao_limite = 3
-    escolha (opcao)
-    armazenamento_quant = input['Qual a capacidade? ']
+    escolha (opcao_limite)
+    armazenamento_quant = input('Qual a capacidade? ')
     print()
     if opcao == 1:
         armazenamento = 'HDD'
@@ -61,22 +61,22 @@ def menu_armazenamento ():
     return armazenamento, armazenamento_quant
 
 def menu_processador ():
-    processador = input ['Qual o processador? ']
-    processador_freq = input ['Qual a frequência? ']
+    processador = input('Qual o processador? ')
+    processador_freq = input('Qual a frequência? ')
     return processador, processador_freq
 
 def menu_memoria ():
     try:
-        memoria_ddr = input ['Qual DDR da memoria? ']
-        if memoria_ddr & (1,2,3,4,5):
+        memoria_ddr = input('Qual DDR da memoria? ')
+        if memoria_ddr in ('1', '2', '3', '4', '5'):
             return memoria_ddr
         else:
             print('ERRO: Opcão inválida!')
     except ValueError:
             print('ERRO: Opcão inválida!')
             
-    memoria_freq = input ['Qual a frequência? ']
-    memoria_quant = input ['Qual a capacidade? ']
+    memoria_freq = input('Qual a frequência? ')
+    memoria_quant = input('Qual a capacidade? ')
     return  memoria_freq,memoria_quant
 
 def cadastro_desktop ():
@@ -88,7 +88,7 @@ def cadastro_desktop ():
     memoria_ddr = [menu_memoria(memoria_ddr)]
     memoria_quant = [menu_memoria(memoria_quant)]
     memoria_freq = [menu_memoria(memoria_freq)]
-    usuario = input['Quem é o usuário? ']
+    usuario = input('Quem é o usuário? ')
     return [tipo, armazenamento, armazenamento_quant, processador, processador_freq, memoria_ddr, memoria_freq, memoria_quant, usuario]
 
 def cadastro_hardware ():
@@ -100,11 +100,11 @@ def menu_lista ():
     print('2. Buscar')
     print(f'3. Retornar ao menu anterior. \n')
     opcao_limite = 3
-    escolha(opcao)
+    escolha(opcao_limite)
     
 def menu_filtro ():
     print(f'1. Buscar por hardware isolado.')
     print(f'2. Buscar por conjunto.')
     print(f'3. Retornar ao menu anterior. \n')
     opcao_limite = 3
-    escolha(opcao)
+    escolha(opcao_limite)
